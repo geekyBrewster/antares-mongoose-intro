@@ -16,7 +16,7 @@ app.use('/', index);
 
 
 /** ------- MONGOOSE CONNECTION -------- **/
-var databaseUrl = 'monggodb://localhost:27017/antares';   //localhost or url/name of db
+var databaseUrl = 'mongodb://localhost:27017/antares';   //localhost or url/name of db
 mongoose.connect(databaseUrl);  //creates a CONNECTION
 
 // Using .on functionality to console log on successful connection & log errors
@@ -26,8 +26,6 @@ mongoose.connection.on('connected', function(){
 mongoose.connection.on('error', function(err){
   console.log('mongoose connection error: ', err);
 });
-
-// Define person schema in models folder
 
 
 
