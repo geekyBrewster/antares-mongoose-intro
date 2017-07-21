@@ -18,7 +18,8 @@ myApp.controller('PeopleController', ['$http', function($http) {
       //GET requests
       $http.get('/person')
       .then(function(response){
-        console.log('People received: ', response.data);
+        // console.log('People received: ', response.data);
+        console.log('People displayed.');
         vm.people = response.data;
       });
     }
@@ -36,6 +37,17 @@ myApp.controller('PeopleController', ['$http', function($http) {
       console.log('delete person w/ id: ' + id);
       $http.delete('/person/' + id)
         .then(function(response){
+          getPeople();
+        });
+    };
+
+    // Add 100 internet points to selected person
+    vm.addInternetPoints = function(id, internetPoints) {
+      console.log('Adding 100 pts to person w/ id: ' + id);
+      var data = {internetPoints: internetPoints + 100};
+      $http.put('/person/addPoints/' + id, data)
+        .then(function(response){
+          console.log("Points were added.");
           getPeople();
         });
     };

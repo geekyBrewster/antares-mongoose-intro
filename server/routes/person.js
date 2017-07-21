@@ -49,6 +49,22 @@ router.put('/:id', function(req, res){
   );
 });  // end of put
 
+router.put('/addPoints/:id', function(req, res){
+  console.log('Finding person by id: ', req.params.id);
+  Person.findByIdAndUpdate(
+    {_id: req.params.id},     // where to find, using ID
+    {$set: { internetPoints: req.body.internetPoints }},   // what to change
+    function(err, data){
+      if(err){
+        console.log('update error: ', err);
+      } else {
+        console.log('updated points: ', data);
+        res.sendStatus(200);
+      }
+    }
+  );
+});  // end of put
+
 router.delete('/:id', function(req, res){
   console.log('Delete person w/ id: ', req.body);
   // There are lots of find methods avaialable through Mongoose

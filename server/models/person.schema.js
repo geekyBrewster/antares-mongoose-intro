@@ -6,7 +6,7 @@ var personSchema = new Schema({
   name: {type: String, required: true, unique: true},     //defining the data that is 'name'
   location: String,
   dateOfBirth: Date,
-  internetPts: {type: Number, default: 1000}
+  internetPoints: {type: Number, default: 1000}
 });
 
 //Create the model

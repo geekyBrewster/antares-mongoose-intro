@@ -9,8 +9,8 @@
  - [x] Add both pieces of info to the DOM
 
 ##Hard Mode
- - [ ] Add a button to each person's listing on the DOM that increases their IP by 100
- - [ ] Update listing in the collection & on the page
+ - [x] Add a button to each person's listing on the DOM that increases their IP by 100
+ - [x] Update listing in the collection & on the page
 
  ##Pro Mode
  - [ ] Add a search bar to search by `name` using `Mongoose` methods
