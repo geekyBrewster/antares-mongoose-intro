@@ -5,7 +5,7 @@ myApp.controller('PeopleController', ['$http', function($http) {
     getPeople();
 
     vm.addPerson = function(){
-      console.log('add person');
+      console.log('add person:', vm.newPerson);
       //POST request
       $http.post('/person', vm.newPerson)
         .then(function(response){

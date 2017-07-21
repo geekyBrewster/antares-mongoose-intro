@@ -4,7 +4,9 @@ var Schema = mongoose.Schema;   //using this like a constructor
 //Define person schema
 var personSchema = new Schema({
   name: {type: String, required: true, unique: true},     //defining the data that is 'name'
-  location: String
+  location: String,
+  dateOfBirth: Date,
+  internetPts: {type: Number, default: 1000}
 });
 
 //Create the model
