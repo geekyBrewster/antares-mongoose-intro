@@ -13,7 +13,8 @@
  - [x] Update listing in the collection & on the page
 
  ##Pro Mode
- - [ ] Add a search bar to search by `name` using `Mongoose` methods
+ - [x] Add a search bar to search by `name` using `Mongoose` methods
+ - [ ] Fix the hard coding on Update, so you can actually update fields
 
 
 

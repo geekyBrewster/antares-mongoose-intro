@@ -1,6 +1,7 @@
 myApp.controller('PeopleController', ['$http', function($http) {
     var vm = this;      //vm - view model
     vm.newPerson = {};
+    vm.visibility = false;
 
     getPeople();
 
@@ -50,6 +51,19 @@ myApp.controller('PeopleController', ['$http', function($http) {
           console.log("Points were added.");
           getPeople();
         });
+    };
+
+    //Find person based on first name
+    vm.findPerson = function(name) {
+      console.log("Find: ", name);
+      //GET requests
+      $http.get('/person/findPerson/' + name)
+      .then(function(response){
+        // console.log('People received: ', response.data);
+        console.log('People displayed.');
+        vm.visibility = true;
+        vm.foundPerson = response.data;
+      });
     };
 
 }]); //end of controller

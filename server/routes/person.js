@@ -33,6 +33,21 @@ router.get('/', function(req, res){
   });
 }); // end getPeople
 
+// Get person with name provided by user (search)
+router.get('/findPerson/:name', function(req, res){
+  // var findName = req.body;
+  console.log('Find person with name: ', req.params.name);
+  Person.findOne({ name: req.params.name }, function(err, data){
+    if(err){
+      console.log('find error: ', err);
+      res.sendStatus(500);
+    } else {
+      //data sent back is an array of Person objects
+      res.send(data);   //replaces res.send(rows.data)
+    }
+  });
+}); // end getPeople
+
 router.put('/:id', function(req, res){
   console.log('New location is: ', req.body);
   // There are lots of find methods avaialable through Mongoose
